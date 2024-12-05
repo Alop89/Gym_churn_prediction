@@ -10,17 +10,8 @@ By analyzing the digital profiles of Model Fitness customers, we aim to develop 
 Our primary objective is to develop a data-driven customer retention strategy for Model Fitness. Through this project, we aim to provide the company with a valuable tool to analyze customer behavior, optimize marketing efforts, and improve the overall customer experience, leading to increased customer retention and sustainable business growth.
 
 # Libraries used 
-import pandas as pd
-import numpy as np 
-import seaborn as sns
-import matplotlib.pyplot as plt
-from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, confusion_matrix, log_loss
-from sklearn.cluster import KMeans
-from scipy.cluster.hierarchy import linkage, dendrogram
+
+![Libraries](https://github.com/Alop89/Gym_churn_prediction/blob/main/images/libraries.png)
 
 
 
