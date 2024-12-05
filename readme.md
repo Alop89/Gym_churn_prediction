@@ -26,9 +26,9 @@ from scipy.cluster.hierarchy import linkage, dendrogram
 
 # Main highlights 
 
-![Heat to show correlation between the variables and determine which ones are important.](https://raw.githubusercontent.com/Alop89/Gym_churn_prediction/main/images/dendogram.png)
+![Heat to show correlation between the variables and determine which ones are important.](https://github.com/Alop89/Gym_churn_prediction/blob/main/images/heatmap.png)
 
-1[Dendrogram showing the clusters obtained.](https://github.com/Alop89/Gym_churn_prediction/blob/main/images/dendogram.png)
+![Dendrogram showing the clusters obtained.](https://github.com/Alop89/Gym_churn_prediction/blob/main/images/dendogram.png)
 
 
 # ML models 
@@ -37,89 +37,11 @@ For this section, logistic regression and random forest models will be used.
 
 Logistic regression focuses on predicting the probability that an observation belongs to a specific category, using a sigmoid function to assign a value between 0 and 1. On the other hand, random forests are a set of decision trees that work together to make more accurate and robust predictions. These models differ in their internal functioning, but both are valuable tools in various applications, such as customer classification. The choice of model will depend on the characteristics of the data set and the specific problem to be solved.
 
-## Obtención de variable objetivo y características 
-df.drop('effective_cancellation', axis = 1, inplace = True)
-X = df.drop('churn', axis = 1)
-y = df['churn']
 
-## División en conjuntos de entrenamiento y prueba 
-X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.2, random_state=0)
+![ML results](https://github.com/Alop89/Gym_churn_prediction/blob/main/images/ml_results.png)
 
-## Escalado de variables
-scaler = StandardScaler()
-X_train_scaled = scaler.fit_transform(X_train)
-X_test_scaled = scaler.transform(X_test)
 
-## Modelos
-logistic_model = LogisticRegression()
-rf_model = RandomForestClassifier()
-
-## Entrenamiento
-logistic_model.fit(X_train_scaled, y_train)
-rf_model.fit(X_train_scaled, y_train)
-
-## Predicciones
-logistic_pred = logistic_model.predict(X_test_scaled)
-rf_pred = rf_model.predict(X_test_scaled)
-
-## Probabilidades para AUC y Log Loss
-logistic_prob = logistic_model.predict_proba(X_test_scaled)[:, 1]
-rf_prob = rf_model.predict_proba(X_test_scaled)[:, 1]
-
-## Métricas
-metrics = {
-    "Logistic Regression": {
-        "Accuracy": accuracy_score(y_test, logistic_pred),
-        "Precision": precision_score(y_test, logistic_pred),
-        "Recall": recall_score(y_test, logistic_pred),
-        "F1 Score": f1_score(y_test, logistic_pred),
-        "AUC-ROC": roc_auc_score(y_test, logistic_prob),
-        "Log Loss": log_loss(y_test, logistic_prob),
-        "Confusion Matrix": confusion_matrix(y_test, logistic_pred)
-    },
-    "Random Forest": {
-        "Accuracy": accuracy_score(y_test, rf_pred),
-        "Precision": precision_score(y_test, rf_pred),
-        "Recall": recall_score(y_test, rf_pred),
-        "F1 Score": f1_score(y_test, rf_pred),
-        "AUC-ROC": roc_auc_score(y_test, rf_prob),
-        "Log Loss": log_loss(y_test, rf_prob),
-        "Confusion Matrix": confusion_matrix(y_test, rf_pred)
-    }
-}
-
-## Imprimir las métricas
-for model, metric in metrics.items():
-    print(f"\n{model} Metrics:")
-    for m, value in metric.items():
-        if m == "Confusion Matrix":
-            print(f"{m}:\n{value}")
-        else:
-            print(f"{m}: {value:.2f}")
-
-# Results 
-Logistic Regression Metrics:
-Accuracy: 0.93
-Precision: 0.87
-Recall: 0.85
-F1 Score: 0.86
-AUC-ROC: 0.97
-Log Loss: 0.18
-Confusion Matrix:
-[[2246  107]
- [ 129  718]]
-
-Random Forest Metrics:
-Accuracy: 0.91
-Precision: 0.86
-Recall: 0.78
-F1 Score: 0.82
-AUC-ROC: 0.96
-Log Loss: 0.24
-Confusion Matrix:
-[[2248  105]
- [ 186  661]]
-
+![Scores](https://github.com/Alop89/Gym_churn_prediction/blob/main/images/scores.png)
 
  
 * Accuracy: Logistic regression has a slightly higher accuracy (0.93 vs 0.91).
@@ -131,7 +53,6 @@ Confusion Matrix:
 * Confusion Matrix: Logistic regression has fewer false negatives (129 vs 181) and slightly more false positives (107 vs 101).
 
 Based on these results, it can be considered that the logistic regression model has a better performance.
-
 
 
 
