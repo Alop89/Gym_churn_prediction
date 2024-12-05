@@ -26,7 +26,9 @@ from scipy.cluster.hierarchy import linkage, dendrogram
 
 # Main highlights 
 
+![Heat to show correlation between the variables and determine which ones are important.](https://raw.githubusercontent.com/Alop89/Gym_churn_prediction/main/images/dendogram.png)
 
+1[Dendrogram showing the clusters obtained.](https://github.com/Alop89/Gym_churn_prediction/blob/main/images/dendogram.png)
 
 
 # ML models 
