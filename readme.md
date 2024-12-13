@@ -24,7 +24,7 @@ Our primary objective is to develop a data-driven customer retention strategy fo
 
 # ML models 
 
-For this section, logistic regression and random forest models will be used.
+For this section, logistic regression and random forest models were used.
 
 Logistic regression focuses on predicting the probability that an observation belongs to a specific category, using a sigmoid function to assign a value between 0 and 1. On the other hand, random forests are a set of decision trees that work together to make more accurate and robust predictions. These models differ in their internal functioning, but both are valuable tools in various applications, such as customer classification. The choice of model will depend on the characteristics of the data set and the specific problem to be solved.
 
